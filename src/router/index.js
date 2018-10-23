@@ -28,11 +28,6 @@ export default new Router({
       }
     },
     {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
       path: '/topic',
       name: 'Topic',
       component: Topic,
@@ -49,12 +44,30 @@ export default new Router({
       }
     },
     {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+      meta: {
+        showFooter: true
+      }
+    },
+    {
       path: '/ucenter',
       name: 'Ucenter',
       component: Ucenter,
       meta: {
         showFooter: true
       }
+      // children: [
+      //   {
+      //     path: '/ucenter/login',
+      //     name: 'Login',
+      //     component: Login,
+      //     meta: {
+      //       showFooter: true
+      //     }
+      //   }
+      // ]
     },
     {
       path: '/',

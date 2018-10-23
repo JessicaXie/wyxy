@@ -7,11 +7,9 @@
 
 <script>
 import FooterGuide from './components/FooterGuide/FooterGuide'
-import Buttons from './components/Buttons/Buttons'
 export default {
   components: {
-    FooterGuide,
-    Buttons
+    FooterGuide
   }
 }
 </script>
