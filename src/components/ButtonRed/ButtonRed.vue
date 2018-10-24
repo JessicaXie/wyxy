@@ -3,12 +3,15 @@
   <div class="btn_container">
     <!--短信：icon-duanxin-->
     <i class="iconfont icon-mobilephone_fill"></i>
-    <span class="btn_text">手机号登录</span>
+    <span class="btn_text">{{btn_text}}</span>
   </div>
 </div>
 </template>
 <script>
 export default {
+  props: {
+    btn_text: String
+  }
 
 }
 

@@ -84,7 +84,7 @@ export default {
           border-radius: 4px
           .placeholder
             margin-left 5px
-            coloe #666
+            color #666
       .inner
         display flex
         flex-flow row nowrap
@@ -98,7 +98,6 @@ export default {
         .list
           display flex
           flex-flow column nowrap
-
 
 
 </style>
