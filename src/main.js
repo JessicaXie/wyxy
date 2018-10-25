@@ -5,8 +5,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 import './mock/mockServer'
-
-Vue.config.productionTip = false
+import 'swiper/dist/css/swiper.min.css'
+// Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
