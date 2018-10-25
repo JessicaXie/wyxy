@@ -22,6 +22,7 @@ export default {
 
 <style scoped type="text/stylus" lang="stylus" rel="stylesheet/stylus">
   .login_header
+    z-index 100
     position relative
     background-color #fafafa
     width 100%

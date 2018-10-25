@@ -50,7 +50,7 @@ export default {
     // 发送ajax请求
     const result = await reqToPic()
     if (result.code === 0) {
-      const topic = result.focusList
+      const topic = result.detail
       commit(RECEIVE_TOPIC, {topic})
     }
   },

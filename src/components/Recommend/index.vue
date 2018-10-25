@@ -3,7 +3,7 @@
   <Title :title="data.name"></Title>
   <div class="itemMajor">
     <a href="javascript:;">
-      <img v-lazy="data.Item[0].picUrl" alt="">
+      <img :src="data.Item[0].picUrl" alt="">
       <div class="info">
         <div class="line1">
           <div class="Linetitle">{{data.Item[0].title}}</div>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="topicPic">
-      <img v-lazy="data.Item[1].picUrl" alt="">
+      <img :src="data.Item[1].picUrl" alt="">
       <div class="topicTag">
         <div class="tag">{{data.Item[1].typeName}}</div>
       </div>
@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="topicPic">
-      <img v-lazy="data.Item[2].picUrl" alt="">
+      <img :src="data.Item[2].picUrl" alt="">
       <div class="topicTag">
         <div class="tag">{{data.Item[2].typeName}}</div>
       </div>
@@ -49,56 +49,56 @@
 </template>
 
 <script>
-  import Title from '../../../components/Title'
-  export default {
-    components: {
-      Title
-    },
-    props: {
-      data: Object
-    }
+import Title from '../Title/Title'
+export default {
+  components: {
+    Title
+  },
+  props: {
+    data: Object
   }
+}
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-@import '../../../common/stylus/mixins.styl'
+@import '../../common/stylus/mixins.styl'
   .recommend
-    padding 0 px2rem(30) px2rem(40)
-    margin-bottom px2rem(20)
+    padding 0 15px 20px
+    margin-bottom 10px
     background #ffffff
     .itemMajor
-      margin-bottom px2rem(30)
+      margin-bottom 15px
       position relative
       color #333333
       border 1px solid #d9d9d9
-      border-radius px2rem(8)
+      border-radius 4px
       overflow hidden
-      img 
-        height px2rem(386)
-        border-radius px2rem(8) px2rem(8) 0 0
-      .info 
+      img
+        height 193px
+        border-radius 4px 4px 0 0
+      .info
         box-sizing border-box
-        padding px2rem(24) px2rem(20) px2rem(67)
+        padding 12px 10px 33px
         color #333333
         .line1
-          margin-bottom px2rem(30)
+          margin-bottom 15px
           display flex
           justify-content space-between
           align-items center
           line-height 1.2
-          height px2rem(43)
+          height 21px
           .Linetitle
             flex 1
-            margin-right px2rem(170)
-            font-size px2rem(36)
+            margin-right 85px
+            font-size 18px
             ellipsis()
           .price
             line-height 1
-            font-size px2rem(32)
+            font-size 16px
             text-align center
-            min-width px2rem(115)
+            min-width 57px
         .line2
-          font-size px2rem(28)
+          font-size 14px
           color #7f7f7f
           line-height 1.2
           ellipsis()
@@ -108,8 +108,8 @@
       color #333333
       border 1px solid #d9d9d9
       box-sizing border-box
-      border-radius px2rem(4)
-      margin-bottom px2rem(30)
+      border-radius 2px
+      margin-bottom 15px
       .topicInfo
         flex 1
         display flex
@@ -117,20 +117,20 @@
         justify-content center
         overflow hidden
         position relative
-        padding-left px2rem(20)
-        padding-right px2rem(30)
+        padding-left 10px
+        padding-right 15px
         .line1
-          margin-bottom px2rem(14)
+          margin-bottom 7px
           line-height 1.2
           box-sizing border-box
           >.topicTitle
-            height px2rem(38)
+            height 19px
             ellipsis()
-            font-size px2rem(32)
-            margin-right px2rem(30)
+            font-size 16px
+            margin-right 15px
         .line2
           .cont
-            font-size px2rem(24)
+            font-size 12px
             line-height 1.5
             color #7f7f7f
             display -webkit-box
@@ -139,25 +139,25 @@
             ellipsis()
       .topicPic
         position relative
-        width px2rem(280)
-        height px2rem(272)
+        width 120px
+        height 136px
         overflow hidden
-        img 
+        img
           width 100%
         >.topicTag
           position absolute
-          top px2rem(10)
-          left px2rem(10)
-          height px2rem(36)
+          top 5px
+          left 5px
+          height 18px
           font-size 0
           >.tag
             display inline-block
-            padding 0 px2rem(16)
-            height px2rem(34)
-            font-size px2rem(24)
-            line-height px2rem(34)
+            padding 0 8px
+            height 17px
+            font-size 12px
+            line-height 17px
             border 1px solid #d9d9d9
-            border-radius px2rem(20)
+            border-radius 10px
             color #333333
             background-color rgba(255,255,255,.9)
       &:last-child

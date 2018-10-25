@@ -4,56 +4,56 @@
       <span class="inner">更多精彩</span>
     </div>
     <a href="javascript:;" class="item" v-for="item in data" :key="item.topicId">
-      <img v-lazy="item.itemPicUrl" alt="img">
+      <img :src="item.itemPicUrl" alt="img">
       <div class="desc">{{item.title}}</div>
     </a>
   </section>
 </template>
 
 <script>
-  export default {
-    props: {
-      data: Array
-    }
+export default {
+  props: {
+    data: Array
   }
+}
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-@import '../../../common/stylus/mixins.styl'
+@import '../../common/stylus/mixins.styl'
   .moveTopic
-    margin 0 px2rem(30) px2rem(30)
+    margin 0 15px 15px
     .moveTit
-      height px2rem(140)
+      height 70px
       display flex
       align-items center
       &:before
         content ''
         display block
-        width px2rem(264)
+        width 132px
         height 1px
         background #d9d9d9
       &:after
         content ''
         display block
-        width px2rem(264)
+        width 132px
         height 1px
         background #d9d9d9
       .inner
-        margin 0 px2rem(24)
-        font-size px2rem(28)
+        margin 0 12px
+        font-size 14px
         color #333333
     >.item
       display block
-      padding px2rem(24)
+      padding 12px
       background #ffffff
       color #333333
-      margin-bottom px2rem(30)
-      >img 
-        width px2rem(642)
-        height px2rem(360)
+      margin-bottom 15px
+      >img
+        width 321px
+        height 180px
       >.desc
-        font-size px2rem(28)
-        padding px2rem(28) 0
+        font-size 14px
+        padding 14px 0
         line-height 1.2
         ellipsis()
 </style>

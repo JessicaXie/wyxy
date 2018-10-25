@@ -33,7 +33,7 @@ export default {
 <style scoped lang='stylus' rel='stylesheet/stylus'>
   @import '../../common/stylus/mixins.styl'
   .wapper
-    background-color brown
+    /*background-color brown*/
     width 100%
     .swiper-container
         /*width 100%*/

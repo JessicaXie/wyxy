@@ -2,7 +2,29 @@
   <div class="topicShow">
     <Title title="十点一刻"></Title>
     <div class="ShowSwiper">
-      <swiper ref="mySwiper" :options="swiperOptions">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="(item, index) in data" :key="index">
+            <a href="javascript:;">
+              <div class="lineTitle">
+                <span class="inner">今日话题</span>
+              </div>
+              <div class="tsTitle">{{item.title}}</div>
+              <div class="desc">{{item.desc}}</div>
+              <div class="joinInfo">{{item.participantNum}}人参与话题</div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:;">
+              <div class="move">
+                <span>查看全部话题</span>
+                <i></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--<swiper ref="mySwiper" :options="swiperOptions">
         <swiper-slide v-for="item in data" :key="item.id">
           <a href="javascript:;">
             <div class="lineTitle">
@@ -21,53 +43,53 @@
             </div>
           </a>
         </swiper-slide>
-      </swiper>
+      </swiper>-->
     </div>
   </div>
 </template>
 
 <script>
-  import Title from '../../../components/Title'
-  export default {
-    data () {
-      return {
-        swiperOptions: {
-          slidesPerView: 1.15,
-          spaceBetween: 20
-        }
-      }
-    },
-    computed: {
-      swpier () {
-        return this.$refs.mySwiper.swpier
-      }
-    },
-    components: {
-      Title
-    },
-    props: {
-      data: Array
-    }
+import Swiper from 'swiper'
+import Title from '../Title/Title'
+import {mapState} from 'vuex'
+export default {
+  mounted () {
+    new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination'
+      },
+      loop: true
+    })
+  },
+  computed: {
+    ...mapState(['banner', 'home', 'alldata', 'topic', 'items'])
+  },
+  components: {
+    Title
+  },
+  props: {
+    data: Array
   }
+}
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' scoped>
-@import '../../../common/stylus/mixins.styl'
+@import '../../common/stylus/mixins.styl'
   .topicShow
-    margin-bottom px2rem(20)
+    margin-bottom 10px
     background #ffffff
-    padding-left px2rem(20)
-    padding-bottom px2rem(20)
+    padding-left 10px
+    padding-bottom 10px
     .swiper-slide
-      background url('../../../assets/images/qipao.png')
+      background url('../../assets/images/qipao.png')
       background-repeat no-repeat
       background-size 100% 100%
       a
         position relative
         display block
         width 100%
-        height px2rem(412)
-        padding px2rem(38) px2rem(40) px2rem(80)
+        height 206px
+        padding 19px 20px 40px
         box-sizing border-box
         text-align center
         color #333333
@@ -75,49 +97,49 @@
           display flex
           align-items center
           justify-content center
-          margin-bottom px2rem(28)
+          margin-bottom 14px
           &:before
             content ''
             display block
-            width px2rem(24)
+            width 12px
             height 1px
             background-color #7f7f7f
           &:after
             content ''
             display block
-            width px2rem(24)
+            width 12px
             height 1px
             background-color #7f7f7f
-          span 
-            margin 0 px2rem(8)
-            font-size px2rem(24)
+          span
+            margin 0 4px
+            font-size 12px
             color #7f7f7f
         .tsTitle
-          font-size px2rem(36)
+          font-size 18px
           font-weight 700
-          margin-top px2rem(60)
-          margin-bottom px2rem(14)
+          margin-top 30px
+          margin-bottom 7px
         .desc
-          font-size px2rem(28)
+          font-size 14px
           line-height 1.5
-          margin-top px2rem(20)
-          margin-bottom px2rem(14)
+          margin-top 10px
+          margin-bottom 7px
           ellipsis()
         .joinInfo
           position absolute
           left 50%
           transform translateX(-50%)
-          bottom px2rem(78)
-          width px2rem(500)
-          height px2rem(48)
-          font-size px2rem(24)
+          bottom 39px
+          width 250px
+          height 24px
+          font-size 12px
           text-align center
       &:last-child
         background none
         a
           position relative
-          width px2rem(580)
-          height px2rem(385)
+          width 290px
+          height 192px
           border 10px solid #e6e6e6
           padding 0
           background-color #fafafa
@@ -128,20 +150,20 @@
             left 0
             bottom 0
             margin auto
-            width px2rem(240)
-            height px2rem(38)
+            width 120px
+            height 19px
             display flex
             align-items center
-            >span 
+            >span
               color #7f7f7f
-              font-size px2rem(32)
-              line-height px2rem(38)
-              margin-right px2rem(18)
-            >i 
+              font-size 16px
+              line-height 19px
+              margin-right 9px
+            >i
               display inline-block
-              width px2rem(30)
-              height px2rem(30)
-              background url('../../../assets/images/right.png')
+              width 15px
+              height 15px
+              background url('../../assets/images/right.png')
               background-repeat no-repeat
               background-size 100% 100%
 </style>
